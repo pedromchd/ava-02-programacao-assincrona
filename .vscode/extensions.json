@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "christian-kohler.path-intellisense",
+    "EditorConfig.EditorConfig",
+    "ms-vscode.atom-keybindings",
+    "ritwickdey.LiveServer",
+    "vscode-icons-team.vscode-icons",
+    "wayou.vscode-todo-highlight",
+    "Zignd.html-css-class-completion",
+    "thekalinga.bootstrap4-vscode",
+    "wallabyjs.quokka-vscode",
+    "dbaeumer.vscode-eslint"
+  ],
+  "unwantedRecommendations": [
+    "dbaeumer.jshint",
+    "firefox-devtools.vscode-firefox-debug"
+  ]
+}
