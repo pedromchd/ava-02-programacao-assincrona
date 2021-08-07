@@ -1,3 +1,21 @@
-.azul {
-  color: blue;
+#ava02 {
+  margin-top: 25vh;
+}
+
+.red {
+  color: #d00000;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 2rem;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
 }
