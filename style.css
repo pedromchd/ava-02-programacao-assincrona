@@ -1,9 +1,16 @@
-#ava02 {
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
+}
+
+div:first-of-type {
   margin-top: 25vh;
 }
 
-.red {
-  color: #d00000;
+div:last-of-type {
+  position: absolute;
+  bottom: 0rem;
+  width: 100vw;
 }
 
 div {
@@ -12,10 +19,5 @@ div {
 }
 
 button {
-  margin: 2rem;
-  font-family: monospace;
-}
-
-h1 {
-  text-align: center;
+  margin-inline: 1rem;
 }
