@@ -29,7 +29,7 @@ function timer(mil) {
   mil -= min * 60000;
   let sec = parseInt(mil / 1000);
 //mil -= sec * 1000;
-  min = (min < 10) ? `0${min}` : sec;
+  min = (min < 10) ? `0${min}` : min;
   sec = (sec < 10) ? `0${sec}` : sec;
   return `${min}:${sec}`;
 }
