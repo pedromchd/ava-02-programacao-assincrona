@@ -25,10 +25,11 @@ function left(to) {
 }
 
 function timer(mil) {
-  const min = parseInt(mil / 60000);
+  let min = parseInt(mil / 60000);
   mil -= min * 60000;
   let sec = parseInt(mil / 1000);
 //mil -= sec * 1000;
+  min = (min < 10) ? `0${min}` : sec;
   sec = (sec < 10) ? `0${sec}` : sec;
   return `${min}:${sec}`;
 }
