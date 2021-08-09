@@ -1,31 +1,7 @@
-@font-face {
-  font-family: "Roboto Mono";
-  src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
-}
-
-#pomodoro {
-  margin-top: 25vh;
-}
-
 #timer {
   font-size: 10rem;
   font-family: "Roboto Mono", monospace;
   user-select: none;
-}
-
-#foot {
-  position: absolute;
-  bottom: 0rem;
-  width: 100vw;
-}
-
-div {
-  display: flex;
-  justify-content: center;
-}
-
-button {
-  margin-inline: 1rem;
 }
 
 b {
