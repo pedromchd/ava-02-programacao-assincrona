@@ -1,0 +1,12 @@
+.red {
+  color: #d00000;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  font-family: "Roboto Mono", monospace;
+}
