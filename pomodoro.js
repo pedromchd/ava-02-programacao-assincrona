@@ -5,13 +5,15 @@ const btn2 = qSel("button")[1];
 let counter;
 
 btn1.addEventListener('click', () => {
-  counter = setInterval(() => {
-    time.innerText = timer(left(count2(25)));
-  }, 50);
+  clearInterval(counter);
+  const count = count2(25);
+  counter = interval(count);
 });
 
 btn2.addEventListener('click', () => {
   clearInterval(counter);
+  const count = count2(5);
+  counter = interval(count);
 });
 
 function count2(t) {
@@ -29,4 +31,10 @@ function timer(mil) {
 //mil -= sec * 1000;
   sec = (sec < 10) ? `0${sec}` : sec;
   return `${min}:${sec}`;
+}
+
+function interval(to) {
+  return setInterval(() => {
+    time.innerText = timer(left(to));
+  }, 50);
 }
