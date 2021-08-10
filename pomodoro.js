@@ -4,6 +4,8 @@ const btns = qSel("button");
 const icon = qSel("i");
 let counter;
 
+const alarm = new Audio('diamond.mp3');
+
 btns[0].addEventListener('click', () => {
   toggle(0, 1);
   clearInterval(counter);
@@ -20,6 +22,7 @@ window.addEventListener("message", () => {
   for (let b in btns) if (btns[b].disabled) onOff(b);
   clearInterval(counter);
   time.classList.add("red");
+  alarm.play();
 });
 
 function count2(t) {
