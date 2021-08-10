@@ -16,12 +16,20 @@ btns[1].addEventListener('click', () => {
   counter = interval(count2(5));
 });
 
+window.addEventListener("message", () => {
+  for (let b in btns) if (btns[b].disabled) onOff(b);
+  clearInterval(counter);
+  time.classList.add("red");
+});
+
 function count2(t) {
   return Date.now() + t * 60000;
 }
 
 function left(to) {
-  return to - Date.now();
+  const aux = to - Date.now();
+  if (aux < 1000) postMessage(true);
+  return aux;
 }
 
 function timer(mil) {
@@ -49,6 +57,7 @@ function onOff(k) {
   btns[k].disabled = !(btns[k].disabled);
   icon[k].classList.toggle("fa-spinner");
   icon[k].classList.toggle("fa-pulse");
+  time.classList.remove("red");
 }
 
 function toggle(i, j) {
