@@ -4,7 +4,7 @@ const btns = qSel("button");
 const icon = qSel("i");
 let counter;
 
-const alarm = new Audio('diamond.mp3');
+const alarm = new Audio('pmd/diamond.mp3');
 
 btns[0].addEventListener('click', () => {
   toggle(0, 1);
