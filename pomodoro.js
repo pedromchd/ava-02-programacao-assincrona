@@ -8,7 +8,7 @@ buttons.forEach((btn, i) => {
     clearInterval(pomodoro);
     postMessage(i);
     btn.disabled = true;
-    let now = (i) ? 0.1 : 25;
+    let now = (i) ? 5 : 25;
     now = until(now);
     pomodoro = setInterval(() => {
       timer.innerText = convert(remainingTo(now));
