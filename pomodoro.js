@@ -4,16 +4,12 @@ const alarm = new Audio('pmd/diamond.mp3');
 let pomodoro;
 
 buttons.forEach((btn, i) => {
-  const ico = btn.querySelector('i');
   btn.addEventListener('click', () => {
-    timer.classList.remove('red');
     clearInterval(pomodoro);
     postMessage(i);
     btn.disabled = true;
-    ico.classList.add('fa-spinner', 'fa-pulse');
-    const now = until((() => {
-      return (i) ? 5 : 25;
-    })());
+    let now = (i) ? 0.1 : 25;
+    now = until(now);
     pomodoro = setInterval(() => {
       timer.innerText = convert(remainingTo(now));
     }, 50);
@@ -21,16 +17,15 @@ buttons.forEach((btn, i) => {
 });
 
 window.onmessage = (msg) => {
-  if (msg.data === '') {
+  if (msg.data !== false) {
+    timer.classList.remove('red');
+  } else {
     clearInterval(pomodoro);
     timer.classList.add('red');
     alarm.play();
   }
-  buttons.forEach((btn, i) => {
-    if (i !== msg.data) {
-      btn.querySelector('i').classList.remove('fa-spinner', 'fa-pulse');
-      btn.disabled = false;
-    }
+  buttons.forEach((b, i) => {
+    if (i !== msg.data) b.disabled = false;
   });
 }
 
@@ -40,14 +35,14 @@ function until(t) {
 
 function remainingTo(t) {
   const left = t - Date.now();
-  if (left < 1000) postMessage('');
+  if (left < 1000) postMessage(false);
   return left;
 }
 
 function convert(mil) {
-  let min = parseInt(mil / 60000);
+  const min = parseInt(mil / 60000);
   mil -= min * 60000;
-  let sec = parseInt(mil / 1000);
+  const sec = parseInt(mil / 1000);
 //mil -= sec * 1000;
   return getTime(min, sec);
 }

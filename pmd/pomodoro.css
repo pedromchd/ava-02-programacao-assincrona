@@ -3,3 +3,13 @@
   font-family: "Roboto Mono", monospace;
   user-select: none;
 }
+
+button:disabled i.fa-clock-o,
+button:disabled i.fa-coffee,
+i.fa-spinner.fa-pulse {
+  display: none;
+}
+
+button:disabled i.fa-spinner.fa-pulse {
+  display: inline-block;
+}
