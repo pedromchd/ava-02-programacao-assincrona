@@ -1,6 +1,7 @@
 const timer = document.querySelector('#timer');
 const buttons = document.querySelectorAll('button');
 const alarm = new Audio('pmd/diamond.mp3');
+alarm.volume = 0.1;
 let pomodoro;
 
 buttons.forEach((btn, i) => {
