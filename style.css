@@ -24,4 +24,5 @@ div {
 
 button {
   margin-inline: 1rem;
+  user-select: none;
 }
