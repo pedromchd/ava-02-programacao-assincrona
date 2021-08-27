@@ -3,6 +3,10 @@
   src: url("fonts/RobotoMono-VariableFont_wght.ttf") format("truetype");
 }
 
+body {
+  background-color: #f8f9fa;
+}
+
 .red {
   color: #dc3545;
 }
@@ -11,7 +15,7 @@ div:first-of-type {
   margin-top: 25vh;
 }
 
-div:last-of-type {
+div#credits {
   position: absolute;
   bottom: 0rem;
   width: 100vw;

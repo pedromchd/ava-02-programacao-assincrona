@@ -11,7 +11,7 @@ form button {
   margin-inline-start: 0.5rem;
 }
 
-div:last-of-type {
+div#credits {
   display: flex;
   justify-content: center;
   position: absolute;
