@@ -3,12 +3,12 @@ body {
 }
 
 form input {
-  width: 50vw !important;
+  width: 30vw !important;
 }
 
 form button {
   width: 16vw !important;
-  margin-inline-end: 0.5rem;
+  margin-inline-start: 0.5rem;
 }
 
 div:last-of-type {
