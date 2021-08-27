@@ -1,3 +1,16 @@
-div {
-  display: inline-block;
+form input {
+  width: 50vw !important;
+}
+
+form button {
+  width: 20vw !important;
+  margin-inline-end: 0.5rem;
+}
+
+div:last-of-type {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0rem;
+  width: 100vw;
 }

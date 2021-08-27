@@ -6,16 +6,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Palavras</title>
-  <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+  <link rel="shortcut icon" href="docs/text.svg" type="image/x-icon">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="style.css"> -->
-  <!-- <link rel="stylesheet" href="palavras.css"> -->
+  <link rel="stylesheet" href="palavras.css">
 </head>
 
 <body>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/docs/text.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      Word Finder
+    </a>
+  </nav>
 
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Insira letras..." aria-label="Search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">
+        <i class="fa fa-search"></i>
+        Palavras com tais letras
+      </button>
+      <button class="btn btn-info my-2 my-sm-0" type="submit">
+        <i class="fa fa-search"></i>
+        Formada por tais letras
+      </button>
+    </form>
+  </nav>
+
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-text">
+      As palavras encontradas serão mostradas aqui.
+    </span>
+  </nav>
+
+  <div>
+    <p>Developed by Pedro Machado</p>
+  </div>
 
   <script src="js/jquery-3.5.1.slim.min.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
