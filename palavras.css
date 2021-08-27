@@ -1,9 +1,13 @@
+body {
+  background-color: #f8f9fa;
+}
+
 form input {
   width: 50vw !important;
 }
 
 form button {
-  width: 20vw !important;
+  width: 16vw !important;
   margin-inline-end: 0.5rem;
 }
 
