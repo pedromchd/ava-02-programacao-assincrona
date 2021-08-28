@@ -18,3 +18,7 @@ div#credits {
   bottom: 0rem;
   width: 100vw;
 }
+
+nav#output-container {
+  display: inline-block;
+}
