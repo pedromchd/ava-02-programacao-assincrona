@@ -19,7 +19,7 @@ nav#output-container {
 div#credits {
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: fixed; /* ajeitar os cre´ditos */
   bottom: 0rem;
   width: 100vw;
 }

@@ -15,10 +15,10 @@ formEl.onsubmit = e => e.preventDefault();
 
 button.forEach((btn, ind) => {
   btn.addEventListener('click', () => {
-    input_.placeholder = 'Insira letras para começar a buscar';
     try {
       let val = input_.value.trim().toLowerCase();
       if (val === '') throw 'Insira ao menos um caractere para inciar a busca';
+      else input_.placeholder = 'Insira letras para iniciar a busca';
       toggle(loader);
       output.innerText = 'Buscando...';
       finder.postMessage([val, ind]);
