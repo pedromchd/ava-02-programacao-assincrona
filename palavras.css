@@ -11,14 +11,15 @@ form button {
   margin-inline-start: 0.5rem;
 }
 
+/* tratar o icone de carreagmento */
+nav#output-container {
+  display: inline-block;
+}
+
 div#credits {
   display: flex;
   justify-content: center;
   position: absolute;
   bottom: 0rem;
   width: 100vw;
-}
-
-nav#output-container {
-  display: inline-block;
 }

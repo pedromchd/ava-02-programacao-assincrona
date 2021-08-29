@@ -14,3 +14,5 @@ onmessage = msg => {
 
 // function formedBy() {}
 // function hasThe() {}
+
+// tratar o fech - sistema de contagem

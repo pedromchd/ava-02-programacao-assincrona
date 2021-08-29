@@ -17,11 +17,11 @@
 <body>
   <nav class="navbar navbar-dark bg-dark justify-content-between">
     <span class="navbar-brand">
-      <img src="/docs/text.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="/docs/text.svg" width="30" height="30" class="d-inline-block align-top">
       Word Finder
     </span>
     <form class="form-inline">
-      <input class="form-control mr-sm-0" type="search" placeholder="Insira letras..." aria-label="Search">
+      <input class="form-control mr-sm-0" type="search" placeholder="Insira letras para começar a busca">
       <button class="btn btn-light my-2 my-sm-0" type="button">
         <i class="fa fa-search"></i>
         Palavras com tais letras
@@ -34,10 +34,11 @@
   </nav>
 
   <nav class="navbar navbar-light bg-light" id="output-container">
+    <!-- tratar o ícone de carregamento -->
     <span><i class="fa fa-spinner fa-pulse" hidden></i></span>
-    <span class="navbar-text">
+    <output class="navbar-text">
       As palavras encontradas serão mostradas aqui.
-    </span>
+    </output>
   </nav>
 
   <div id="credits">
