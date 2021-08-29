@@ -7,9 +7,8 @@ const finder = new Worker('palavras-finder.js');
 const alarme = new Audio('docs/alloy.mp3');
 alarme.volume = 0.1;
 
-// tratar o ícone de carregamento
-const loader = document.querySelector('i.fa-spinner');
-const toggle = i => i.hidden = (i.hidden) ? i.hidden = false : i.hidden = true;
+const loader = document.createElement('i');
+loader.classList.add('fa', 'fa-spinner', 'fa-pulse');
 
 formEl.onsubmit = e => e.preventDefault();
 
@@ -19,8 +18,8 @@ button.forEach((btn, ind) => {
       let val = input_.value.trim().toLowerCase();
       if (val === '') throw 'Insira ao menos um caractere para inciar a busca';
       else input_.placeholder = 'Insira letras para iniciar a busca';
-      toggle(loader);
-      output.innerText = 'Buscando...';
+      output.innerText = ' Buscando...';
+      output.prepend(loader);
       finder.postMessage([val, ind]);
     }
     catch (e) {
@@ -31,7 +30,6 @@ button.forEach((btn, ind) => {
 });
 
 finder.onmessage = msg => {
-  toggle(loader);
   alarme.play();
   output.innerText = msg.data;
 }

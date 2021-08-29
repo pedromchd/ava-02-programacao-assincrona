@@ -6,11 +6,6 @@ form button {
   width: 16vw !important;
 }
 
-/* tratar o icone de carreagmento */
-#output-container {
-  display: inline-block;
-}
-
 .sticky-bottom {
   position: sticky !important;
   bottom: 0 !important;
