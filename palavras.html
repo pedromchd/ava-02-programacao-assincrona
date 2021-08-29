@@ -14,15 +14,15 @@
   <link rel="stylesheet" href="palavras.css">
 </head>
 
-<body>
-  <nav class="navbar navbar-dark bg-dark justify-content-between">
-    <span class="navbar-brand">
+<body class="bg-light">
+  <header class="navbar sticky-top navbar-dark bg-dark justify-content-between">
+    <span class="navbar-brand mb-0 h1">
       <img src="/docs/text.svg" width="30" height="30" class="d-inline-block align-top">
       Word Finder
     </span>
     <form class="form-inline">
       <input class="form-control mr-sm-0" type="search" placeholder="Insira letras para iniciar a busca">
-      <button class="btn btn-light my-2 my-sm-0" type="button">
+      <button class="btn btn-light my-2 my-sm-0 mx-2" type="button">
         <i class="fa fa-search"></i>
         Palavras com tais letras
       </button>
@@ -31,19 +31,21 @@
         Formada por tais letras
       </button>
     </form>
-  </nav>
+  </header>
 
-  <nav class="navbar navbar-light bg-light" id="output-container">
+  <article class="navbar navbar-light bg-light" id="output-container">
     <!-- tratar o ícone de carregamento -->
     <span><i class="fa fa-spinner fa-pulse" hidden></i></span>
-    <output class="navbar-text">
+    <output class="navbar-text text-justify text-dark">
       As palavras encontradas serão mostradas aqui.
     </output>
-  </nav>
+  </article>
 
-  <div id="credits">
-    <p>Developed by Pedro Machado</p>
-  </div>
+  <footer class="navbar sticky-bottom navbar-light bg-light d-flex justify-content-center">
+    <span class="navbar-text">
+      Developed by Pedro Machado
+    </span>
+  </footer>
 
   <script src="js/jquery-3.5.1.slim.min.js"></script>
   <script src="js/bootstrap.bundle.js"></script>

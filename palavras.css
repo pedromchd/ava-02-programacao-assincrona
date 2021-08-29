@@ -1,25 +1,17 @@
-body {
-  background-color: #f8f9fa;
-}
-
 form input {
   width: 30vw !important;
 }
 
 form button {
   width: 16vw !important;
-  margin-inline-start: 0.5rem;
 }
 
 /* tratar o icone de carreagmento */
-nav#output-container {
+#output-container {
   display: inline-block;
 }
 
-div#credits {
-  display: flex;
-  justify-content: center;
-  position: fixed; /* ajeitar os cre´ditos */
-  bottom: 0rem;
-  width: 100vw;
+.sticky-bottom {
+  position: sticky !important;
+  bottom: 0 !important;
 }
