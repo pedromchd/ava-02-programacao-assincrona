@@ -1,16 +1,5 @@
-body {
-  height: 100vh;
-}
-
-form input {
-  width: 30vw !important;
-}
-
-form button {
-  width: 16vw !important;
-}
-
 .sticky-bottom {
   position: sticky !important;
   bottom: 0 !important;
+  z-index: 1020 !important;
 }
