@@ -14,16 +14,12 @@ formEl.onsubmit = e => e.preventDefault();
 
 button.forEach((btn, ind) => {
   btn.addEventListener('click', () => {
+    const val = input_.value.trim().toLowerCase();
     try {
-      let val = input_.value.trim().toLowerCase();
-      if (val === '') throw 'Insira ao menos um caractere para inciar a busca';
-      else input_.placeholder = 'Insira letras para iniciar a busca';
-      output.innerText = ' Buscando...';
-      output.prepend(loader);
+      search(val);
       finder.postMessage([val, ind]);
     }
     catch (e) {
-      input_.value = '';
       input_.placeholder = e;
     }
   });
@@ -32,4 +28,15 @@ button.forEach((btn, ind) => {
 finder.onmessage = msg => {
   alarme.play();
   output.innerText = msg.data;
+}
+
+function search(v) {
+  if (v === '') {
+    input_.value = '';
+    throw 'Insira ao menos um caractere para inciar a busca';
+  } else {
+    input_.placeholder = 'Insira letras para iniciar a busca';
+    output.innerText = ' Buscando...';
+    output.prepend(loader);
+  }
 }
