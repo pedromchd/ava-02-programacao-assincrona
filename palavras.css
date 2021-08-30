@@ -2,10 +2,6 @@ body {
   height: 100vh;
 }
 
-/* header, main, footer {
-  width: 100vw;
-} */
-
 form input {
   width: 30vw !important;
 }
