@@ -1,31 +1,46 @@
 onmessage = async msg => {
-  const val = msg.data[0];
-  const ind = msg.data[1];
   const raw = await fetch('docs/palavras.txt');
   const txt = await raw.text();
   const get = txt.split(/\r\n/);
+  const val = msg.data[0];
+  const ind = msg.data[1];
   const res = (ind) ? formedBy(val, get) : hasThe(val, get);
   postMessage(res);
 };
 
-//sistema de contagem
-
 function hasThe(value, words) {
   const found = Array();
-  words.forEach(w => {
-    try {
-      value.split('').forEach(l => {
-        if (w.toLowerCase().indexOf(l) < 0) throw 'aaa';
-      });
-      found.push(w);
+  for (const w of words) {
+    let aux = true;
+    for (const l of value) {
+      if (w.indexOf(l) < 0) aux = false;
     }
-    catch (e) {
-      console.log(e);
-    }
-  });
+    if (aux) found.push(w);
+  }
   return found.join(', ');
 }
 
 function formedBy(value, words) {
-  return words[1];
+  const found = Array();
+  value = permute(value);
+  for (const w of words) {
+    if (value.indexOf(w) !== -1) found.push(w);
+  }
+  return found.join(', ');
+}
+
+function permute(str) {
+  if (str.length < 2) {
+    return str;
+  }
+  const permutation = Array();
+  for (let i in str) {
+    const char = str[i];
+    if (str.indexOf(char) != i) continue;
+    const rest = str.slice(0, i) + str.slice(++i);
+    for (const perm of permute(rest)) {
+      permutation.push(char + perm);
+    }
+  }
+  return permutation;
 }

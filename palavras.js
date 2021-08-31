@@ -1,6 +1,7 @@
 const formEl = document.querySelector('form');
 const input_ = document.querySelector('input');
 const output = document.querySelector('output');
+const spntxt = document.querySelector('span.navbar-text');
 const button = document.querySelectorAll('button');
 
 const finder = new Worker('palavras-finder.js');
@@ -27,6 +28,7 @@ button.forEach((btn, ind) => {
 
 finder.onmessage = msg => {
   alarme.play();
+  spntxt.innerHTML = `Encontrados ${msg.data.length} resultados para "${input_.value}"`;
   output.innerHTML = msg.data;
 }
 
@@ -36,7 +38,8 @@ function search(v) {
     throw 'Insira ao menos um caractere para inciar a busca';
   } else {
     input_.placeholder = 'Insira letras para iniciar a busca';
-    output.innerText = ' Buscando...';
-    output.prepend(loader);
+    spntxt.hidden = false;
+    spntxt.innerText = ' Buscando...';
+    spntxt.prepend(loader);
   }
 }
