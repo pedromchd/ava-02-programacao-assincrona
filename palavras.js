@@ -27,7 +27,7 @@ button.forEach((btn, ind) => {
 
 finder.onmessage = msg => {
   alarme.play();
-  output.innerText = msg.data;
+  output.innerHTML = msg.data;
 }
 
 function search(v) {
