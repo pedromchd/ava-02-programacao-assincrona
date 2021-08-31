@@ -13,20 +13,20 @@ function hasThe(value, words) {
   for (const w of words) {
     let aux = true;
     for (const l of value) {
-      if (w.indexOf(l) < 0) aux = false;
+      if (w.toLowerCase().indexOf(l) < 0) aux = false;
     }
     if (aux) found.push(w);
   }
-  return found.join(', ');
+  return found;
 }
 
 function formedBy(value, words) {
   const found = Array();
   value = permute(value);
   for (const w of words) {
-    if (value.indexOf(w) !== -1) found.push(w);
+    if (value.indexOf(w.toLowerCase()) !== -1) found.push(w);
   }
-  return found.join(', ');
+  return found;
 }
 
 function permute(str) {
