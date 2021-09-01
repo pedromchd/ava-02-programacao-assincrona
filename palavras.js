@@ -15,7 +15,7 @@ formEl.onsubmit = e => e.preventDefault();
 
 button.forEach((btn, ind) => {
   btn.addEventListener('click', () => {
-    const val = input_.value.trim().toLowerCase().replaceAll(' ', '');
+    const val = input_.value.toLowerCase().replaceAll(' ', '');
     try {
       search(val);
       finder.postMessage([val, ind]);
@@ -28,7 +28,7 @@ button.forEach((btn, ind) => {
 
 finder.onmessage = msg => {
   alarme.play();
-  spntxt.innerHTML = `Encontrados ${msg.data.length} resultados para "${input_.value}"`;
+  spntxt.innerHTML = `Encontrados ${msg.data.length} resultados para "${input_.value.trim()}"`;
   output.innerHTML = msg.data.join(', ');
 }
 
