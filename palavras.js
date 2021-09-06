@@ -13,12 +13,11 @@ loader.classList.add('fa', 'fa-spinner', 'fa-pulse');
 
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();
+  const val = input_.value.toLowerCase().replaceAll(' ', '');
+  if (!val) return;
   let ind;
   const btn = e.submitter;
   button.forEach((b, i) => { if (b === btn) ind = i; });
-  console.log(ind);
-  const val = input_.value.toLowerCase().replaceAll(' ', '');
-  if (!val) return;
   spntxt.innerText = ' Buscando...';
   spntxt.prepend(loader);
   finder.postMessage([val, ind]);
