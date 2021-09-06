@@ -1,8 +1,8 @@
-const formEl = document.querySelector('form');
-const input_ = document.querySelector('input');
+const formEl = document.forms[0];
+const input_ = formEl.querySelector('input');
+const button = formEl.querySelectorAll('button');
 const output = document.querySelector('output');
 const spntxt = document.querySelector('span.navbar-text');
-const button = document.querySelectorAll('button');
 
 const finder = new Worker('palavras-finder.js');
 const alarme = new Audio('docs/alloy.mp3');
@@ -11,35 +11,21 @@ alarme.volume = 0.1;
 const loader = document.createElement('i');
 loader.classList.add('fa', 'fa-spinner', 'fa-pulse');
 
-formEl.onsubmit = e => e.preventDefault();
-
-button.forEach((btn, ind) => {
-  btn.addEventListener('click', () => {
-    const val = input_.value.toLowerCase().replaceAll(' ', '');
-    try {
-      search(val);
-      finder.postMessage([val, ind]);
-    }
-    catch (e) {
-      input_.placeholder = e;
-    }
-  });
+formEl.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let ind;
+  const btn = e.submitter;
+  button.forEach((b, i) => { if (b === btn) ind = i; });
+  console.log(ind);
+  const val = input_.value.toLowerCase().replaceAll(' ', '');
+  if (!val) return;
+  spntxt.innerText = ' Buscando...';
+  spntxt.prepend(loader);
+  finder.postMessage([val, ind]);
 });
 
 finder.onmessage = msg => {
   alarme.play();
   spntxt.innerHTML = `Encontrados ${msg.data.length} resultados para "${input_.value.trim()}"`;
   output.innerHTML = msg.data.join(', ');
-}
-
-function search(v) {
-  if (v === '') {
-    input_.value = '';
-    throw 'Insira ao menos um caractere para inciar a busca';
-  } else {
-    input_.placeholder = 'Insira letras para iniciar a busca';
-    spntxt.hidden = false;
-    spntxt.innerText = ' Buscando...';
-    spntxt.prepend(loader);
-  }
 }

@@ -21,20 +21,22 @@
       Word Finder
     </span>
     <form class="form-inline w-75 justify-content-end">
-      <input class="form-control mr-sm-0 w-50" type="search" placeholder="Insira letras para iniciar a busca">
-      <button class="btn btn-light my-2 my-sm-0 mx-2" type="button">
+      <input class="form-control mr-sm-0 w-50" type="search" placeholder="Insira letras para iniciar a busca" autofocus>
+      <button class="btn btn-light my-2 my-sm-0 mx-2" type="submit">
         <i class="fa fa-search"></i>
         Palavras com tais letras
       </button>
-      <button class="btn btn-secondary my-2 my-sm-0" type="button">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">
         <i class="fa fa-search"></i>
         Formada por tais letras
       </button>
     </form>
   </header>
 
-  <main class="navbar navbar-light bg-light d-flex flex-column align-items-start">
-    <span class='navbar-text text-dark h5 mb-0' hidden></span>
+  <main class="navbar navbar-light bg-light d-flex flex-column align-items-start justify-content-start flex-grow-1">
+    <span class='navbar-text text-dark h5 mb-0'>
+      Você ainda não pesquisou nada!
+    </span>
     <output class="navbar-text text-dark text-justify">
       As palavras encontradas serão mostradas aqui.
     </output>
