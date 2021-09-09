@@ -1,6 +1,5 @@
 const formEl = document.forms[0];
-const input_ = formEl.querySelector('input');
-const button = formEl.querySelectorAll('button');
+const input_ = formEl.search;
 const output = document.querySelector('output');
 const spntxt = document.querySelector('span.navbar-text');
 
@@ -13,14 +12,17 @@ loader.classList.add('fa', 'fa-spinner', 'fa-pulse');
 
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();
+  const ind = Number(e.submitter.value);
   const val = input_.value.toLowerCase().replaceAll(' ', '');
   if (!val) return;
-  let ind;
-  const btn = e.submitter;
-  button.forEach((b, i) => { if (b === btn) ind = i; });
   spntxt.innerText = ' Buscando...';
   spntxt.prepend(loader);
   finder.postMessage([val, ind]);
+});
+
+formEl.addEventListener('reset', () => {
+  spntxt.innerHTML = 'Você ainda não pesquisou nada!';
+  output.innerHTML = "As palavras encontradas serão mostradas aqui.";
 });
 
 finder.onmessage = msg => {

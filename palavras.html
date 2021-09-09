@@ -16,20 +16,21 @@
 
 <body class="bg-light d-flex flex-column vh-100">
   <header class="navbar sticky-top navbar-dark bg-dark justify-content-between">
-    <span class="navbar-brand mb-0 h1">
+    <span class="navbar-brand mb-0 h1 text-monospace" style="user-select: none;">
       <img src="/docs/text.svg" width="30" height="30" class="d-inline-block align-top">
       Word Finder
     </span>
-    <form class="form-inline w-75 justify-content-end">
-      <input class="form-control mr-sm-0 w-50" type="search" placeholder="Insira letras para iniciar a busca" autofocus>
-      <button class="btn btn-light my-2 my-sm-0 mx-2" type="submit">
+    <form autocomplete="off" class="form-inline w-75 justify-content-end">
+      <input class="form-control mr-sm-0 w-50" name="search" type="search" placeholder="Insira letras para iniciar a busca" autofocus>
+      <button class="btn btn-light my-2 my-sm-0 mx-2" type="submit" value="0">
         <i class="fa fa-search"></i>
         Palavras com tais letras
       </button>
-      <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit" value="1">
         <i class="fa fa-search"></i>
         Formada por tais letras
       </button>
+      <button class="btn btn-danger my-2 my-sm-0 ml-2" type="reset"><i class="fa fa-trash"></i></button>
     </form>
   </header>
 
