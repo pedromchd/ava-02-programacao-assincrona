@@ -59,7 +59,8 @@ function getTime(...hms) {
 async function toast(title, body) {
   const options = {
     body,
-    image: 'pomodoro.jpg'
+    image: 'pomodoro.jpg',
+    requireInteraction: true
   };
   if ('Notification' in window) {
     if (Notification.permission === 'granted') {
