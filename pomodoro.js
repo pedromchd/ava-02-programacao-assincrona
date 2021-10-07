@@ -23,7 +23,8 @@ window.onmessage = (msg) => {
   } else {
     clearInterval(pomodoro);
     timer.classList.add('red');
-    alarm.play();
+  //alarm.play();
+    toast('POMODORO', 'O tempo definido chegou ao fim!');
   }
   buttons.forEach((b, i) => {
     if (i !== msg.data) b.disabled = false;
@@ -53,4 +54,24 @@ function getTime(...hms) {
     hms[i] = (v < 10) ? `0${v}` : v;
   });
   return hms.join(':');
+}
+
+async function toast(title, body) {
+  const options = {
+    body,
+    image: 'pomodoro.jpg'
+  };
+  if ('Notification' in window) {
+    if (Notification.permission === 'granted') {
+      alarm.play();
+      new Notification(title, options);
+    } else
+    if (Notification.permission === 'default') {
+      const per = await Notification.requestPermission();
+      if (per === 'granted') {
+        alarm.play();
+        new Notification(title, options);
+      } else console.error('As notificações foram negadas');
+    } else console.error('As notificações foram negadas');
+  } else console.error('O navegador não suporta notificações');
 }
